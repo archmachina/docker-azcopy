@@ -11,4 +11,8 @@ RUN mkdir -p /usr/local/bin && cd /usr/local/bin && \
   chown root:root /usr/local/bin/azcopy && \
   rm -f /usr/local/bin/azcopy.tar.gz
 
+WORKDIR /work
+ENV HOME=/work
+RUN chmod 777 /work
+
 ENTRYPOINT [ "/usr/local/bin/azcopy" ]
